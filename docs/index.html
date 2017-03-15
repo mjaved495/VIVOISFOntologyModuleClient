@@ -28,7 +28,8 @@
                </div>
             </div>
          </nav>
-         <div class="container" style="min-height:600px;margin-top:5em;" ng-show="homepageView">
+         <div class="container" style="min-height:600px;margin-top:2em;" ng-show="homepageView">
+            <div class="container">
             <h1 id="fontstyle">Overview</h1>
             <p>
               VIVO uses a collection of ontologies to represent scholarship.  The Integrated Semantic Framework ontology modules for VIVO (the VIVO-ISF ontology) provide a set of types (classes) and relationships (properties) to represent researchers and the full context in which they work. Content in any local VIVO installation may be maintained manually, brought into VIVO in automated ways from local systems of record, such as HR, grants, course, and faculty activity databases, or from database providers such as publication aggregators and funding agencies.  Additional ontologies provide context and meaning for attributes and entities defined in VIVO-ISF.
@@ -50,13 +51,19 @@
               <a href="http://www.openrif.org"><img style="margin-left:45em; margin-top:1em;" src="data/openrif.png" height="90" width="300"></a>
             </p>
          </div>
-         <div class="container" style="min-height:600px;margin-top:5em;" ng-show="designView">
+         </div>
+         <div class="container" style="min-height:600px;margin-top:2em;" ng-show="designView">
             <a name="top"></a>
             <div class="container">
-               <h4 id="fontstyle"> Namespaces: </h4>
-               <span style="margin-right:1.25em; display:inline-block; text-transform: uppercase;" ng-repeat="ontology in ontologies">
-                  <a href="#{{ontology.code}}">{{ontology.code}}</a>
-               </span>
+               <h1 id="fontstyle">Ontology Modules</h1>
+               <p>Ontology modules list consists of the ontology modules that are extracted from the external upstream ontologies (such as FOAF, VCARD, SKOS, VIVO-ISF etc.). In <a href="http://vivoweb.org/ontology/core">VIVO ontology</a>, all these modules are merged and are delivered with the VIVO software.</p>
+               <div style="margin-right:1.25em; display:inline-block;">
+                  <ul>
+                     <li ng-repeat="ontology in ontologies">
+                        <a href="#{{ontology.code}}"> {{ontology.ontologyName}} Module ({{ontology.code}})</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
             <hr/>
             <div class="container" ng-repeat="ontology in ontologies">
@@ -131,13 +138,17 @@
                </div>
             </div>
          </div>
-         <div class="container" style="min-height:600px;margin-top:5em;" ng-show="patternView">
+         <div class="container" style="min-height:600px;margin-top:2em;" ng-show="patternView">
             <a name="topmodel"></a>
             <div class="container">
-               <h4 id="fontstyle"> List of Models: </h4>
-               <span style="margin-right:1.25em; display:inline-block; text-transform: uppercase;" ng-repeat="model in models">
-                  <a href="#{{model.modelTitle}}">{{model.modelTitle}} Model</a>
-               </spn>
+               <h1 id="fontstyle">List of Models</h1>
+               <span style="margin-right:1.25em; display:inline-block;">
+                  <ul>
+                     <li ng-repeat="model in models">
+                        <a href="#{{model.modelTitle}}">{{model.modelTitle}} Model</a>
+                     </li>
+                  </ul>
+               </span>
             </div>
             <hr/>
             <div class="container" ng-repeat="model in models">
@@ -185,7 +196,7 @@
                <p class="muted credit">
                   <font style="font-style: italic; font-family: Times New Roman, Times, serif;" color="#808080">Created by 
                   <a href="http://orcid.org/0000-0001-9770-7640" target="_blank">Muhammad Javed</a>. 
-                  last modified on Feb 28, 2017.
+                  last modified on Mar 15, 2017.
                   </font>
                </p>
             </div>
